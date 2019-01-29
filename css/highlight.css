@@ -1,285 +1,157 @@
-.article-content .highlight-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  margin: 1.6em 0;
-  padding-top: 38px;
-  background: #21252B;
-}
-.article-content .highlight::-webkit-scrollbar {
-  height: 10px;
-  background-color: #282C34;
-}
-.article-content .highlight::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #282C34;
-}
-
-.article-content .highlight::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #3E4451;
-}
-.article-content-cloud .highlight-box::before,
-.article-content-mac .highlight-box::before {
-  content: attr(data-rel);
-  height: 38px;
-  line-height: 38px;
-  color: #fff;
-  font-size: 14px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0px 75px;
-}
-.article-content-mac .highlight-box::before {
-  padding: 0px 90px;
-}
-.article-content-cloud .highlight-box::after{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 4px;
-  width: 46px;
-  height: 19px;
-  background-image: url('./images/icons/css_cloud.png')
-}
-.article-content-mac .highlight-box::after{
-  content: " ";
-  position: absolute;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background: #FF5454;
-  width: 12px;
-  height: 12px;
-  top: 0;
-  left: 20px;
-  margin-top: 13px;
-  -webkit-box-shadow: 20px 0px #FFBF00, 40px 0px #00D22E;
-  box-shadow: 20px 0px #FFBF00, 40px 0px #00D22E;
-  z-index: 3;
-}
-.article-content-doorframe .highlight-box {
-  background-color: #282C34;
-  border-radius: 0;
-  border: 1px solid #be7e4a;
-  box-shadow: 3px 0 #282C34, -3px 0 #282C34, 0px -3px #282C34, 0px 3px #282C34;
-}
-.article-content-doorframe .highlight-box::before,
-.article-content-doorframe .highlight-box::after,
-.article-content-doorframe .highlight-box .highlight::before,
-.article-content-doorframe .highlight-box .highlight::after {
-  content: "";
-  display: block;
-  position: absolute;
-  background-image: url('../images/icons/css_doorframe.png');
-  background-size: auto 44px;
-  width: 44px;
-  height: 44px;
-  background-repeat: no-repeat;
-}
-.article-content-doorframe .highlight-box::before {
-  top: 0;
-  left: 0;
-  transform:rotate(90deg);
-}
-.article-content-doorframe .highlight-box::after {
-  top: 0;
-  right: 0;
-  transform:rotate(180deg);
-}
-
-.article-content-doorframe .highlight-box .highlight::before {
-  bottom: 0;
-  left: 0;
-}
-.article-content-doorframe .highlight-box .highlight::after {
-  bottom: 0;
-  right: 0;
-  transform:rotate(-90deg);
-}
-.article-content-doorframe .highlight-box .highlight {
-  padding-bottom: 53px !important;
-}
-.article-content .highlight {
-  padding: 15px 20px;
-}
-.article-content pre,
-.article-content .highlight {
-  background: #282C34;
-  overflow: auto;
-  color: #ABB2BF;
-  line-height: 22px;
-}
-
-.article-content .highlight .gutter pre,
-.article-content .gist .gist-file .gist-data .line-numbers {
-  color: #4B5363;
-  font-size: 0.85em;
-}
-.article-content img {
-  max-width: 100%;
-}
-.article-content pre,
-.article-content code {
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-}
-.article-content code {
+.entry .gist {
   background: #eee;
-  text-shadow: 0 1px #fff;
-  padding: 0 0.3em;
+  border: 1px solid color-border;
+  margin-top: 15px;
+  padding: 7px 15px;
+  border-radius: 2px;
+  text-shadow: 0 0 1px #fff;
+  line-height: 1.6;
+  overflow: auto;
+  color: #666;
 }
-.article-content pre code {
+.entry .gist .gist-file {
+  border: none;
+  font-family: inherit;
+  margin: 0;
+  font-size: 0.9em;
+}
+.entry .gist .gist-file .gist-data {
   background: none;
-  text-shadow: none;
-  padding: 0;
+  border-bottom: none;
 }
-.article-content .highlight pre {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-.article-content .highlight table {
-  margin: 0;
-  width: auto;
-}
-.article-content .highlight td {
-  border: none;
-  padding: 0;
-}
-.article-content .highlight figcaption {
-  font-size: 0.85em;
-  color: #999;
-  line-height: 1em;
-  margin-bottom: 1em;
-}
-.article-content .highlight figcaption:before,
-.article-content .highlight figcaption:after {
-  content: "";
-  display: table;
-}
-.article-content .highlight figcaption:after {
-  clear: both;
-}
-.article-content .highlight figcaption a {
-  float: right;
-}
-.article-content .highlight .gutter pre {
-  text-align: right;
-  padding-right: 20px;
-}
-.article-content .highlight .line {
-  height: 22.400000000000002px;
-}
-.article-content .highlight .line.marked {
-  background: #515151;
-}
-.article-content .gist {
-  margin: 0;
-  border-style: solid;
-  border-color: #ddd;
-  border-width: 1px 0;
-  background: #2d2d2d;
-  padding: 15px 20px 15px 0;
-}
-.article-content .gist .gist-file {
-  border: none;
-  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-  margin: 0;
-}
-.article-content .gist .gist-file .gist-data {
-  background: none;
-  border: none;
-}
-.article-content .gist .gist-file .gist-data .line-numbers {
-  background: none;
-  border: none;
-  padding: 0 20px 0 0;
-}
-.article-content .gist .gist-file .gist-data .line-data {
+.entry .gist .gist-file .gist-data pre {
   padding: 0 !important;
+  font-family: font-mono;
 }
-.article-content .gist .gist-file .highlight {
-  margin: 0;
+.entry .gist .gist-file .gist-meta {
+  background: none;
+  color: color-meta;
+  margin-top: 5px;
   padding: 0;
+  text-shadow: 0 0 1px #fff;
+  font-size: 100%;
+}
+.entry .gist .gist-file .gist-meta a {
+  color: color-link;
+}
+.entry .gist .gist-file .gist-meta a:visited {
+  color: color-link;
+}
+figure.highlight {
+  border: 1px solid color-border;
+  margin-top: 15px;
+  padding: 7px 15px;
+  border-radius: 2px;
+  text-shadow: 0 0 1px #fff;
+  line-height: 1.6;
+  overflow: auto;
+  position: relative;
+  font-size: 0.9em;
+}
+figure.highlight figcaption {
+  color: color-meta;
+  margin-bottom: 5px;
+  text-shadow: 0 0 1px #fff;
+}
+figure.highlight figcaption a {
+  position: absolute;
+  right: 15px;
+}
+figure.highlight pre {
   border: none;
+  padding: 10px;
+  margin: 0;
 }
-.article-content .gist .gist-file .gist-meta {
-  background: #2d2d2d;
-  color: #999;
-  font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 0 0;
-  padding: 0;
-  margin-top: 1em;
-  margin-left: 20px;
+figure.highlight table {
+  margin-top: 0;
+  border-spacing: 0;
 }
-.article-content .gist .gist-file .gist-meta a {
-  color: #61AFEF;
-  font-weight: normal;
+figure.highlight table th,
+figure.highlight table td {
+  border: 1;
 }
-.article-content .gist .gist-file .gist-meta a:hover {
-  text-decoration: underline;
+figure.highlight .gutter {
+  color: color-meta;
+  padding-right: 1;
+  border-right: 0px solid color-border;
+  text-align: center;
+  width: 10;
+}
+figure.highlight .code {
+  border-left: 1px solid #fff;
+  color: #666;
+}
+figure.highlight .line {
+  height: 20px;
 }
 pre .comment,
-pre .title {
-  color:#3E4451;
-}
-pre .variable,
-pre .attribute,
-pre .regexp,
-pre .ruby .constant,
-pre .xml .tag .title,
-pre .xml .pi,
-pre .xml .doctype,
-pre .html .doctype,
-pre .css .id,
-pre .css .class,
-pre .css .pseudo,
-pre .tag .name {
-  color: #E06C75;
-}
-pre .number,
-pre .preprocessor,
-pre .built_in,
-pre .literal,
-pre .params,
-pre .constant {
-  color: #D19A66;
-}
-pre .class,
-pre .ruby .class .title,
-pre .css .rules .attribute {
-  color: #9c9;
-}
-pre .string,
-pre .value,
-pre .inheritance,
-pre .header,
-pre .ruby .symbol,
-pre .xml .cdata {
-  color: #98C379;
-}
-pre .css .hexcolor {
-  color: #61AFEF;
-}
-pre .attr {
-  color: #D19A66;
-}
-pre .function,
-pre .function .params{
-  color: #ABB2BF;
-}
-
-pre .python .decorator,
-pre .python .title,
-pre .ruby .function .title,
-pre .ruby .title .keyword,
-pre .perl .sub,
-pre .javascript .title,
-pre .coffeescript .title,
-pre .function .title {
-  color: #56B6C2;
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+  color: #93a1a1;
+  font-style: italic;
 }
 pre .keyword,
-pre .javascript .function {
-  color: #C678DD;
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
+  color: #859900;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+  color: #2aa198;
+}
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .built_in,
+pre .identifier,
+pre .vhdl,
+pre .literal,
+pre .id {
+  color: #268bd2;
+}
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+  color: #b58900;
+}
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .symbol .string,
+pre .diff .change,
+pre .special,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata,
+pre .clojure .title {
+  color: #cb4b16;
+}
+pre .deletion {
+  color: #dc322f;
+}
+.code {
+  width: 74px;
 }
