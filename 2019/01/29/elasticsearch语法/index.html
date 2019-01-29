@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>elasticsearch语法 | Dalioer&#39;s website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="es互交语法基本结构1curl -X&amp;lt;VERB&amp;gt; &amp;apos;&amp;lt;PROTOCOL&amp;gt;://&amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt;/&amp;lt;PATH&amp;gt;?&amp;lt;QUERY_STRING&amp;gt;&amp;apos; -d &amp;apos;&amp;lt;BODY&amp;gt;&amp;apos;    &amp;lt; &amp;gt; 描述     VERB 适当的 HTTP 方法 或 谓词 : GET、 P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch语法">
+<meta property="og:url" content="https://dalioer.github.io/dalioer/2019/01/29/elasticsearch语法/index.html">
+<meta property="og:site_name" content="Dalioer&#39;s website">
+<meta property="og:description" content="es互交语法基本结构1curl -X&amp;lt;VERB&amp;gt; &amp;apos;&amp;lt;PROTOCOL&amp;gt;://&amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt;/&amp;lt;PATH&amp;gt;?&amp;lt;QUERY_STRING&amp;gt;&amp;apos; -d &amp;apos;&amp;lt;BODY&amp;gt;&amp;apos;    &amp;lt; &amp;gt; 描述     VERB 适当的 HTTP 方法 或 谓词 : GET、 P">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T08:42:07.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elasticsearch语法">
+<meta name="twitter:description" content="es互交语法基本结构1curl -X&amp;lt;VERB&amp;gt; &amp;apos;&amp;lt;PROTOCOL&amp;gt;://&amp;lt;HOST&amp;gt;:&amp;lt;PORT&amp;gt;/&amp;lt;PATH&amp;gt;?&amp;lt;QUERY_STRING&amp;gt;&amp;apos; -d &amp;apos;&amp;lt;BODY&amp;gt;&amp;apos;    &amp;lt; &amp;gt; 描述     VERB 适当的 HTTP 方法 或 谓词 : GET、 P">
+  
+    <link rel="alternate" href="/dalioer/atom.xml" title="Dalioer&#39;s website" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.jpeg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/dalioer/css/style.css">
+  <link rel="stylesheet" href="/dalioer/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/dalioer/" title="">首页</a>
+      
+        <a class="nav-item" href="/dalioer/archives" title="">归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-elasticsearch语法" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      elasticsearch语法
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/dalioer/2019/01/29/elasticsearch语法/" class="article-date">
+  <time datetime="2019-01-29T08:41:40.000Z" itemprop="datePublished">2019-01-29</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-doorframe" itemprop="articleBody">
+      
+        <h1 id="es互交语法"><a href="#es互交语法" class="headerlink" title="es互交语法"></a>es互交语法</h1><h2 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h2><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X&lt;VERB&gt; &apos;&lt;PROTOCOL&gt;://&lt;HOST&gt;:&lt;PORT&gt;/&lt;PATH&gt;?&lt;QUERY_STRING&gt;&apos; -d &apos;&lt;BODY&gt;&apos;</span><br></pre></td></tr></table></figure></div>
+<table>
+<thead>
+<tr>
+<th>&lt; &gt;</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VERB</td>
+<td>适当的 HTTP 方法 或 谓词 : GET、 POST、 PUT、 HEAD 或者 DELETE</td>
+</tr>
+<tr>
+<td>PROTOCOL</td>
+<td>http 或者 https（如果你在 Elasticsearch 前面有一个https 代理）</td>
+</tr>
+<tr>
+<td>HOST</td>
+<td>Elasticsearch 集群中任意节点的主机名，或者用 localhost 代表本地机器上的节点</td>
+</tr>
+<tr>
+<td>PORT</td>
+<td>运行 Elasticsearch HTTP 服务的端口号，默认是 9200</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>API 的终端路径（例如 _count 将返回集群中文档数量）。Path 可能包含多个组件，例如：_cluster/stats 和 _nodes/stats/jvm</td>
+</tr>
+<tr>
+<td>QUERY_STRING</td>
+<td>任意可选的查询字符串参数 (例如 ?pretty 将格式化地输出 JSON 返回值，使其更容易阅读)</td>
+</tr>
+<tr>
+<td>BODY</td>
+<td>一个 JSON 格式的请求体 (如果请求需要的话)</td>
+</tr>
+</tbody>
+</table>
+<p>ex<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;http://localhost:9200/_count?pretty&apos; -d &apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;&#125;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>检测集群是否健康<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;localhost:9200/_cat/health?v&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>查看分片状态<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET &apos;http://localhost:9200/_cluster/health?pretty&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>获取集群节点<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;localhost:9200/_cat/nodes?v&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>列出所有索引<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;localhost:9200/_cat/indices?v&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>查询索引数据<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &apos;localhost:9200/brand/_search?pretty=true&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>创建索引<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &apos;localhost:9200/customer?pretty&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>删除索引<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XDELETE &apos;http://localhost:9200/customer&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>插件安装<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin install mobz/elasticsearch-head</span><br></pre></td></tr></table></figure></div></p>
+<p>中文分词插件<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v1.10.6/elasticsearch-analysis-ik-1.10.6.zip</span><br></pre></td></tr></table></figure></div></p>
+<p>后台启动<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure></div></p>
+<p>分析器-分析语句<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/_analyze?pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">&quot;analyzer&quot;: &quot;standard&quot;,</span><br><span class="line">&quot;text&quot;: &quot;Text to analyze&quot;</span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="查询命令"><a href="#查询命令" class="headerlink" title="查询命令"></a>查询命令</h2><p>query_string语法<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>分页查询<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;from&quot; : 1,</span><br><span class="line">    &quot;size&quot; : 1,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>增加version值<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;version&quot; : true,</span><br><span class="line">    &quot;from&quot; : 1,</span><br><span class="line">    &quot;size&quot; : 1,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>限制得分<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;version&quot; : true,</span><br><span class="line">    &quot;min_score&quot; : 2.4,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>选择要返回的字段<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;fields&quot; : [&quot;brandName&quot;,&quot;spuName&quot;],</span><br><span class="line">    &quot;version&quot; : true,</span><br><span class="line">    &quot;min_score&quot; : 2.4,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>部分字段(验证失败，可能是版本相关)<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;partial_fields&quot; : &#123;</span><br><span class="line">        &quot;partial1&quot; : &#123;</span><br><span class="line">            &quot;include&quot; : [&quot;brand*&quot;],</span><br><span class="line">            &quot;exclude&quot; : [&quot;spu*&quot;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>脚本字段(验证失败)<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty=true&apos; -d &apos;&#123;</span><br><span class="line">    &quot;script_fields&quot; : &#123;</span><br><span class="line">        &quot;newPrice&quot; : &#123;</span><br><span class="line">            &quot;script&quot; : &quot;_source.guidePrice - reducePrice&quot;,</span><br><span class="line">            &quot;param&quot; : &#123;</span><br><span class="line">                &quot;reducePrice&quot; : 10000</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;query_string&quot; : &#123;&quot;query&quot; : &quot;brandName:本田&quot;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>用constant_score转换query为filter<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/spu/_search?pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;constant_score&quot; : &#123;</span><br><span class="line">            &quot;filter&quot; : &#123;</span><br><span class="line">                &quot;term&quot; : &#123;</span><br><span class="line">                    &quot;spuName&quot; : &quot;手&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div></p>
+<p>组合filter<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/my_store/products/_search?pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot; : &#123;</span><br><span class="line">        &quot;filtered&quot; : &#123; </span><br><span class="line">            &quot;filter&quot; : &#123;</span><br><span class="line">                &quot;bool&quot; : &#123;</span><br><span class="line">                    &quot;should&quot; : [</span><br><span class="line">                        &#123; &quot;term&quot; : &#123;&quot;price&quot; : 20&#125;&#125;, </span><br><span class="line">                        &#123; &quot;term&quot; : &#123;&quot;productID&quot; : &quot;XHDK-A-1293-#fJ3&quot;&#125;&#125; </span><br><span class="line">                    ],</span><br><span class="line">                    &quot;must_not&quot; : &#123;</span><br><span class="line">                        &quot;term&quot; : &#123;&quot;price&quot; : 30&#125; </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="分析命令"><a href="#分析命令" class="headerlink" title="分析命令"></a>分析命令</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/product/_analyze?pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;field&quot;: &quot;spuName&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;手动&quot;</span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div>
+<h2 id="查询验证命令"><a href="#查询验证命令" class="headerlink" title="查询验证命令"></a>查询验证命令</h2><h3 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &apos;localhost:9200/my_index/my_type/_validate/query?explain&amp;pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;bool&quot;: &#123;</span><br><span class="line">            &quot;should&quot;: [</span><br><span class="line">                &#123; &quot;match&quot;: &#123; &quot;title&quot;:         &quot;Foxes&quot;&#125;&#125;,</span><br><span class="line">                &#123; &quot;match&quot;: &#123; &quot;english_title&quot;: &quot;Foxes&quot;&#125;&#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div>
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><h3 id="基本语法-2"><a href="#基本语法-2" class="headerlink" title="基本语法"></a>基本语法</h3><p>bulk API 允许在单个步骤中进行多次 create 、 index 、 update 或 delete 请求。 如果你需要索引一个数据流比如日志事件，它可以排队和索引数百或数千批次。</p>
+<p>bulk 与其他的请求体格式稍有不同，如下所示：<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; action: &#123; metadata &#125;&#125;\n</span><br><span class="line">&#123; request body        &#125;\n</span><br><span class="line">&#123; action: &#123; metadata &#125;&#125;\n</span><br><span class="line">&#123; request body        &#125;\n</span><br></pre></td></tr></table></figure></div></p>
+<p>action/metadata 行指定 哪一个文档 做 什么操作 。</p>
+<p>action 必须是以下选项之一:<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create</span><br><span class="line">如果文档不存在，那么就创建它。</span><br><span class="line">index</span><br><span class="line">创建一个新文档或者替换一个现有的文档。</span><br><span class="line">update</span><br><span class="line">部分更新一个文档。</span><br><span class="line">delete</span><br><span class="line">删除一个文档。</span><br></pre></td></tr></table></figure></div></p>
+<p>案例<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/_bulk?pretty&apos; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123; &quot;delete&quot;: &#123; &quot;_index&quot;: &quot;website&quot;, &quot;_type&quot;: &quot;blog&quot;, &quot;_id&quot;: &quot;123&quot; &#125;&#125; </span><br><span class="line">&#123; &quot;create&quot;: &#123; &quot;_index&quot;: &quot;website&quot;, &quot;_type&quot;: &quot;blog&quot;, &quot;_id&quot;: &quot;123&quot; &#125;&#125;</span><br><span class="line">&#123; &quot;title&quot;:    &quot;My first blog post&quot; &#125;</span><br><span class="line">&#123; &quot;index&quot;:  &#123; &quot;_index&quot;: &quot;website&quot;, &quot;_type&quot;: &quot;blog&quot; &#125;&#125;</span><br><span class="line">&#123; &quot;title&quot;:    &quot;My second blog post&quot; &#125;</span><br><span class="line">&#123; &quot;update&quot;: &#123; &quot;_index&quot;: &quot;website&quot;, &quot;_type&quot;: &quot;blog&quot;, &quot;_id&quot;: &quot;123&quot;, &quot;_retry_on_conflict&quot; : 3&#125; &#125;</span><br><span class="line">&#123; &quot;doc&quot; : &#123;&quot;title&quot; : &quot;My updated blog post&quot;&#125; &#125;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure></div></p>
+<h2 id="SpringBoot与Elasticsearch集成"><a href="#SpringBoot与Elasticsearch集成" class="headerlink" title="SpringBoot与Elasticsearch集成"></a>SpringBoot与Elasticsearch集成</h2><p>pom文件中添加添加依赖<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-elasticsearch<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 解决es no jna warning--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.sun.jna<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jna<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></div></p>
+<p>application.yml添加配置<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="YML"><figure class="iseeu highlight /yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">    data:</span></span><br><span class="line"><span class="attr">        elasticsearch:</span></span><br><span class="line"><span class="attr">            cluster-nodes:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="string">:9300</span></span><br></pre></td></tr></table></figure></div></p>
+<p><em>注意：elasticsearch jar版本要与安装的服务版本相容</em></p>
+<h2 id="Elasticsearch集群健康状态"><a href="#Elasticsearch集群健康状态" class="headerlink" title="Elasticsearch集群健康状态"></a>Elasticsearch集群健康状态</h2><h3 id="状态说明"><a href="#状态说明" class="headerlink" title="状态说明"></a>状态说明</h3><ul>
+<li>green 最健康得状态，说明所有的分片包括备份都可用</li>
+<li>yellow 基本的分片可用，但是备份不可用（或者是没有备份）</li>
+<li>red 部分的分片可用，表明分片有一部分损坏。此时执行查询部分数据仍然可以查到，遇到这种情况，还是赶快解决比较好<h4 id="状态为yellow的解决方法"><a href="#状态为yellow的解决方法" class="headerlink" title="状态为yellow的解决方法"></a>状态为yellow的解决方法</h4></li>
+<li><p>分片与副本分片</p>
+<ul>
+<li>分片用于Elasticsearch在你的集群中分配数据。想象把分片当作数据的容器。文档存储在分片中，然后分片分配给你集群中的节点上。当你的集群扩容或缩小，Elasticsearch将会自动在你的节点间迁移分片，以使集群保持平衡。</li>
+<li>一个分片(shard)是一个最小级别的“工作单元(worker unit)”,它只是保存索引中所有数据的一小片.我们的文档存储和被索引在分片中，但是我们的程序不知道如何直接与它们通信。取而代之的是，他们直接与索引通信.Elasticsearch中的分片分为主分片和副本分片,复制分片只是主分片的一个副本，它用于提供数据的冗余副本，在硬件故障之后提供数据保护，同时服务于像搜索和检索等只读请求，主分片的数量和复制分片的数量都可以通过配置文件配置。但是主切片的数量只能在创建索引时定义且不能修改.相同的分片不会放在同一个节点上。</li>
+</ul>
+</li>
+<li><p>分片算法</p>
+<ul>
+<li><p><code>shard = hash(routing) % number_of_primary_shards</code>routing值是一个任意字符串，它默认是_id但也可以自定义，这个routing字符串通过哈希函数生成一个数字，然后除以主切片的数量得到一个余数(remainder)，余数的范围永远是0到number_of_primary_shards - 1，这个数字就是特定文档所在的分片。</p>
+</li>
+<li><p>这也解释了为什么主切片的数量只能在创建索引时定义且不能修改：如果主切片的数量在未来改变了，所有先前的路由值就失效了，文档也就永远找不到了。</p>
+</li>
+<li><p>所有的文档API（get、index、delete、bulk、update、mget）都接收一个routing参数，它用来自定义文档到分片的映射。自定义路由值可以确保所有相关文档.比如用户的文章,按照用户账号路由,就可以实现属于同一用户的文档被保存在同一分片上。</p>
+</li>
+</ul>
+</li>
+<li><p>单机（空集群）状态为yellow原因</p>
+</li>
+</ul>
+<p>由于我们是单节点部署elasticsearch，而默认的分片副本数目配置为1，而相同的分片不能在一个节点上，所以就存在副本分片指定不明确的问题，所以显示为yellow，我们可以通过在elasticsearch集群上添加一个节点来解决问题，如果你不想这么做，你可以删除那些指定不明确的副本分片（当然这不是一个好办法）但是作为测试和解决办法还是可以尝试的，下面我们试一下删除副本分片的办法</p>
+<p>解决方案<br><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &quot;http://localhost:9200/_settings&quot; -d&apos; &#123;  &quot;number_of_replicas&quot; : 0 &#125; &apos;</span><br></pre></td></tr></table></figure></div></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/dalioer/2019/01/29/elk-安装/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">elk 安装</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/dalioer/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/dalioer/2019/01/29/elasticsearch语法/">elasticsearch语法</a>
+          </li>
+        
+          <li>
+            <a href="/dalioer/2019/01/29/elk-安装/">elk 安装</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 Dalioer &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/dalioer/fancybox/jquery.fancybox.css">
+  <script src="/dalioer/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/dalioer/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/dalioer/" class="mobile-nav-link">首页</a>
+  
+    <a href="/dalioer/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
